@@ -309,6 +309,7 @@ jobs:
           export PATH="${{ env.CLANG_PATH }}:$PATH"
           export KBUILD_BUILD_USER="GitHub-Actions"
           export KBUILD_BUILD_HOST="GitHub"
+          export INSTALL_HDR_PATH=$(pwd)/out/headers_install
           
           # 配置编译参数
           MAKE_ARGS="
@@ -326,6 +327,7 @@ jobs:
             CROSS_COMPILE=aarch64-linux-gnu- \
             CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
             CLANG_TRIPLE=aarch64-linux-gnu- \
+            INSTALL_HDR_PATH=$INSTALL_HDR_PATH \
             -j$(nproc --all)
           "
           
