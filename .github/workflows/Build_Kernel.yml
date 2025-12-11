@@ -87,12 +87,6 @@ jobs:
           packages: python3 git curl ccache libelf-dev build-essential flex bison libssl-dev libncurses-dev liblz4-tool zlib1g-dev libxml2-utils rsync unzip gawk dos2unix bc
           execute_install_scripts: true
 
-      - name: Install Repo Tool
-        run: |
-          curl https://storage.googleapis.com/git-repo-downloads/repo > ~/repo
-          chmod a+x ~/repo
-          sudo mv ~/repo /usr/local/bin/repo
-
       - name: Download ZyCromerZ Clang
         run: |
           mkdir -p clang
@@ -102,7 +96,7 @@ jobs:
           rm Clang-18.0.0git-20240124.tar.gz
           echo "CLANG_PATH=$GITHUB_WORKSPACE/clang/bin" >> $GITHUB_ENV
 
-      - name: Initialize Repo and Sync
+      - name: Clone Repo  
         run: |
           mkdir kernel_workspace && cd kernel_workspace
           git clone https://github.com/TheGeniusClub/android_kernel_common_oneplus_sm8750.git -b v14 --depth=1
