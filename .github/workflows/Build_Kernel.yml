@@ -105,8 +105,7 @@ jobs:
       - name: Initialize Repo and Sync
         run: |
           mkdir kernel_workspace && cd kernel_workspace
-          repo init -u https://github.com/TheGeniusClub/android_kernel_common_oneplus_sm8750.git -b v14 --depth=1 --no-clone-bundle --no-tags
-          repo sync -c -j$(nproc) --no-clone-bundle --no-tags --force-sync
+          git clone https://github.com/TheGeniusClub/android_kernel_common_oneplus_sm8750.git -b v14 --depth=1
 
       - name: Extract Kernel Version Info
         run: |
