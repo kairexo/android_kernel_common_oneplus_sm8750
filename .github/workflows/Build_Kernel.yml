@@ -99,7 +99,7 @@ jobs:
       - name: Clone Repo  
         run: |
           mkdir kernel_workspace && cd kernel_workspace
-          git clone https://github.com/TheGeniusClub/android_kernel_common_oneplus_sm8750.git -b v14 --depth=1
+          git clone https://github.com/TheGeniusClub/android_kernel_common_oneplus_sm8750.git -b v14 --depth=1 .
 
       - name: Extract Kernel Version Info
         run: |
